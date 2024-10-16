@@ -1,0 +1,315 @@
+/* CSS Document */
+
+* {
+	box-sizing: border-box;
+}
+
+h1{
+	font-size: 3em;
+	margin-top: 1.5em;
+	color: white;
+}
+
+.artist_text{
+	font-size: 2.5em;
+	margin-top:0.4em;
+	margin-bottom: 2.8em;
+	color: white;
+}
+
+#entire_container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding:2em;
+	text-align: center;
+	background-color: #000;
+
+}
+
+.italicised_intro{
+	font-style: italic;
+	font-weight: bold;
+	margin-bottom: 2em;
+}
+
+#icib_container {
+	display: flex;
+
+}
+#icib_image {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#icib_image img {
+	max-width: 100%;
+	/* display: block; */
+}
+#icib_image button img {
+	width: 3.125rem;
+	border: 2px solid #000;
+	border-radius: 50%;
+}
+
+button:focus{
+	outline: none;
+}
+
+.info_btn, 
+#toggle_btn, /*MW*/
+#reload_btn /*MW*/ {
+	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+	background: none;
+	background-color: #fff;
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    box-shadow: 0 0 10px 0px #000;
+	transform: scale(1);
+	animation: pulse 2s infinite;
+	z-index: 12;
+}
+.info_btn.viewed {
+	animation: none;
+}
+.info_btn span {
+	width: 2.75rem;
+	height: 2.75rem;
+}
+#toggle_btn, /*MW*/
+#reload_btn {
+	opacity: 0; /* Use this to hide the toggle button */
+	/*opacity: 1;*/ /* Use this to show the toggle button */
+	top: 0;
+}
+#toggle_btn { /*MW*/
+	right: 0;
+}
+
+#reload_btn { /*MW*/
+	left: 0;
+}
+
+#btn_and_popup_0{
+	top: 14%;
+	left: 59%;
+}
+
+#btn_and_popup_1{
+	top: 80%;
+	left: 46%;
+}
+
+#info_btn_1{
+top: 95px;
+}
+#btn_and_popup_2{
+	top: 54%;
+	left: 22%;
+}
+
+#btn_and_popup_3 {
+	top: 22%;
+	left: 81%;
+}
+
+#btn_and_popup_4 {
+	top: 74%;
+	left: 79%;
+}
+
+#btn_and_popup_5
+{
+	top: 49%;
+	left: 82%;
+}
+#btn_and_popup_6{
+	top: 65%;
+	left: 35%;
+}
+
+.info_btn{
+	top: -145px;
+}
+
+#icib_container #intro_text.popup { /*MW*/
+	/* top: 0;  IZ */
+	left: 0;
+	max-width: 100%;
+	margin: 0 3rem;
+	padding-left: 7.5em; /* IZ*/
+	padding-right: 7.5em; /* IZ*/
+	display: flex;
+	flex-direction: column; /* IZ*/
+	justify-content: center; /* IZ*/
+	align-items: center; /* IZ*/
+}
+
+#icib_container .popup {
+	transition: opacity 0.2s ease, visibility 0.2s ease;
+	opacity: 1;
+	border-radius: 5px;
+	position: absolute;
+	visibility: visible;
+	background-image: url(../img/popup_bg.png);
+    background-size: 350px; 
+    background-repeat: no-repeat;
+    background-position: center;
+	height: 300px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	z-index: 15;
+}
+
+.popup_content {
+	margin-left: 3em;
+	margin-right: 3em;
+    width: 260px; 
+	text-align: center;
+	vertical-align: middle;
+}
+
+#icib_container .large_initial_popup{
+	background-image: url(../img/large_initial_popup.png);
+	background-repeat: no-repeat;
+    background-position: center;
+	/* background-size: cover; */
+}
+
+#icib_container .large_initial_popup{
+display: block;
+background-size: contain; 
+height:90%
+}
+
+#icib_container .large_initial_popup p{
+	font-size: 1.5em;
+	margin-bottom: 1em;
+	line-height: 1.5;
+}
+
+#icib_container .hide {
+	opacity: 0;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
+	visibility: hidden;
+}
+#icib_container .close_popup {
+	position: absolute;
+	top: -0.875rem;
+	right: -0.875rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 1.55rem;
+	height: 1.55rem;
+	background: #fff;
+	border-radius: 50%;
+	border: 2px solid #2A2A2A;
+	align-items: center;
+  	font-size: 1.8em;
+}
+
+.btn_and_popup{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+
+}
+
+/* When the button is expanded */
+.info_btn[aria-expanded="true"]{
+    z-index: 20;
+}
+
+/* When the button is not expanded */
+.info_btn[aria-expanded="false"]{
+    z-index: 10;
+}
+
+		/* Full-screen black overlay */
+		#passwordOverlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 1);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 9999;
+		}
+	
+		/* Password input box and button */
+		#passwordForm {
+			text-align: center;
+		}
+		#passwordInput {
+			padding: 10px;
+			font-size: 16px;
+		}
+		#passwordButton {
+			padding: 10px;
+			font-size: 16px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+		#errorMessage {
+			color: red;
+			margin-top: 10px;
+		}
+
+@media screen and (max-width: 520px) {
+	#icib_container .popup p {
+		font-size: 0.8rem;
+	}
+	#icib_container .popup {
+		padding: 0.5rem;
+		margin-top: 2rem;
+		max-width: 9.375rem;
+	}
+	.info_btn {
+		width: 1.75rem;
+		height: 1.75rem;
+	    box-shadow: 0 0 10px 0px #000;
+	}
+	.info_btn span {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+	#icib_image button img {
+		border-width: 1px;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.85);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	75% {
+		transform: scale(1);
+		box-shadow: 0 0 4px 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.85);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+
